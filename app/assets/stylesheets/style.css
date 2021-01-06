@@ -995,7 +995,7 @@ form textarea {
 }
 
 form input[type="submit"] {
-  background-color: #57C3E9;
+  background-color: #faa61a;
   border-radius: 20px;
   color: #fff;
   border: 0;
@@ -1056,6 +1056,7 @@ footer p {
 }
 
 .search-form .search-btn {
+  font-family: FontAwesome;
   width: 10%;
 }
 
