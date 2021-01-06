@@ -1,0 +1,26 @@
+<div class="box">
+  <div class="box-inner">
+    <%= form_with model: @user, as: resource_name, url: user_registration_path, local: true do |f| %>
+      <h1 class='logo'>サインアップ</h1>
+      <div class="box-name">
+        <%= f.label :nickname, "名前" %><br />
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+      </div>
+      <div class="box-email">
+        <%= f.label :email, "Eメール" %><br />
+        <%= f.email_field :email, id:"email", autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="box-password">
+        <div class="a-row">
+          <div class="column-left">
+            <%= f.label :password, "パスワード" %>
+          </div>
+        </div>
+        <%= f.password_field :password, id:"password", autocomplete: "current-password" %>
+      </div>
+      <div class="box-registrations">
+        <%= f.submit "アカウント作成" %>
+      </div>
+    <% end %>
+  </div>
+</div>
