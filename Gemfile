@@ -60,3 +60,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 gem 'pry-rails'
+
+gem 'active_hash'
+
+group :development do
+  gem 'rubocop', require: false
+end
+
+gem 'mini_magick'

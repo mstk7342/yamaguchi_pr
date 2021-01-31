@@ -1,5 +1,47 @@
+  <%# トップページ角島大橋 %>
+      <div class="start">
+        <p><img src="../../assets/tunoshimaohashi-image.png" alt=""></p>
+      </div>
+  <%# トップページ角島大橋 %>
+
+  <%#検索フォーム%>
     <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
     <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
     <%= form.submit "\uF002", class: "search-btn" %>
-    <% end %>  <%# 検索フォーム%>
+    <% end %>
+  <%# 検索フォーム%>
 
+  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      山口県の魅力を知ろう
+    </h2>
+    <p class='service-explain'>
+      歴史を振り返ればわかるように、原動力をもたらす場所、
+    </p>
+    <p class='service-explain'>
+      山口県は新たなパワーを生み出す場所です。
+    </p>
+  </div>
+  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+
+<%# 投稿一覧 %>
+  <div class='tweet-contents'>
+    <h2 class='title'>投稿一覧</h2>
+     <%= link_to '新規投稿商品', new_tweet_path, class: "subtitle" %>
+      <ul class='tweet-lists'>
+      <% @tweets.each do |tweet| %>
+        <li class='tweet-list'>
+        <%= link_to tweets_path, method: :get do %>
+          <div class='tweet-img-content'>
+            <%= image_tag tweet.image, class: "tweet-img" %>
+          </div>
+        <% end %>
+          <h2 class="tweet-name">
+          <%= tweet.name %>
+          </h2>
+        </li>
+      <% end %>
+      </ul>
+  </div>
+  <%# /投稿一覧 %>

@@ -1,0 +1,63 @@
+<div class="tweets-sell-contents">
+  <div class="tweets-sell-main">
+    <h2 class="tweets-sell-title">情報を入力</h2>
+    <%= form_with model: @tweets, url: tweets_path, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %> 
+
+    <%# 画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"tweet-image", class: "image-select" %>
+      </div>
+    </div>
+    <%# /画像 %>
+    <%# 場所名と説明 %>
+    <div class="new-tweets">
+      <div class="weight-bold-text">
+        名前
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"tweets-text", id:"name", placeholder:"名前（必須 40文字まで)（店名、観光地、イベント名など）", maxlength:"40" %>
+      <div class="tweets-explain">
+        <div class="weight-bold-text">
+          おすすめポイント
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :text, class:"tweets-text", id:"text", placeholder:"詳細（必須 1,000文字まで）(例）8月に下関市の花火大会に行きました。花火の数が多く迫力満点です" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /場所名と説明 %>
+
+    <%# おすすめの詳細 %>
+    <div class="tweets-detail">
+      <div class="weight-bold-text">観光の詳細</div>
+        <div class="form">
+          <div class="weight-bold-text">
+            カテゴリー
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category", id:"tweet-category"}) %>
+          <div class="weight-bold-text">
+            市町村
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:city_id, City.all, :id, :name, {}, {class:"city", id:"tweet-status"}) %>
+        </div>
+      </div>
+    </div>
+    <%# /下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する", class:"sell-btn" %><br />
+      <%= link_to '戻る', root_path, class:"back-btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>
