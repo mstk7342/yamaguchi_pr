@@ -21,6 +21,76 @@ summary {
   display: block;
 }
 
+.header {
+  background-color:#b0e0e6;
+}
+
+/* アニメーション */
+.start {
+	height: 100vw;
+	width: 100vw;
+	z-index: 9000;
+}
+.start p {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	z-index: 9999;
+  width: 100vw;
+}
+/* アニメーション */
+
+
+/* 画面上部の帯部分 */
+
+.title-contents {
+  max-width: 100%;
+  background-image:url(mstk.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40vh 15vw;
+  
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+/* .title-contents::after{
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    display: block;
+    width: 26.5%;
+    height: 30%;
+    background-image: url(image1.png);
+    background-size: cover;
+    margin: auto;
+} */
+
+.service-title {
+  margin-left: 130px;
+  font-size: 8vh;
+  text-align:  center; 
+  color: #fff;
+}
+
+.service-explain {
+  font-size: 2.5vh;
+  line-height: 40px;
+  margin-left: 130px;
+  color: #fff;
+  text-align:  center; 
+}
+/* 画面上部の帯部分 */
+
 /*
  * Correct `inline-block` display not defined in IE 8/9. */
 audio,
@@ -666,7 +736,7 @@ a {
 }
 
 a:hover {
-  color: #57C3E9;
+  color: #faa61a;
 }
 
 .bold {
@@ -718,7 +788,7 @@ header.header div.header__bar.row div.grid-6 a.post {
 
 .btn:hover,
 header.header div.header__bar.row div.grid-6 a.post:hover {
-  border-color: #9bdbf2;
+  border-color: #faa61a;
   color: #faa61a;
 }
 
@@ -798,7 +868,7 @@ header.header .user_nav span:after {
 }
 
 header.header .user_nav span:hover ul {
-  color: #57C3E9;
+  color: #faa61a;
   display: block;
 }
 
@@ -1003,7 +1073,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-  background-color: #84d3ef;
+  background-color: #faa61a;
 }
 
 .container {
@@ -1027,8 +1097,8 @@ form input[type="submit"]:hover {
   margin-top: 15px;
 }
 
-.comments a {
-  color: #57C3E9;
+/* .comments a {
+  color: #faa61a;
 }
 
 .comments a:hover {
@@ -1043,11 +1113,13 @@ footer {
 
 footer p {
   text-align: center;
-}
+} */
 
 .search-form {
   text-align: center;
   padding-top: 32px;
+  background-color: #FFF;
+
 }
 
 .search-form .search-input {
@@ -1060,3 +1132,69 @@ footer p {
   width: 10%;
 }
 
+/* 投稿一覧 */
+.tweet-contents{
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+
+.tweet-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.tweet-contents>.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color: #faa61a;
+  font-weight: bold;
+}
+
+/* .tweet-img-content, .name {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 6%;
+  margin-bottom: 50px;
+  margin: 0 10%;
+  width: 80%;
+  height: 80%;
+} */
+
+.tweet-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tweet-lists>.tweet-list {
+  width: 37vh;
+  padding: 1vw;
+ 
+}
+
+.tweet-img-content {
+  position: relative;
+}
+
+.tweet-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.tweet-name {
+  font-size: 2.5vh;
+}
+
+/* 投稿一覧 */
+
+.search-form, .title-contents, .tweet-contents, .tweet-list, .tweet-name {
+  background-color: antiquewhite;
+}
