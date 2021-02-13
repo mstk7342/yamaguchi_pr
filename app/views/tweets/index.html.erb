@@ -32,7 +32,7 @@
       <ul class='tweet-lists'>
       <% @tweets.each do |tweet| %>
         <li class='tweet-list'>
-        <%= link_to tweets_path, method: :get do %>
+        <%= link_to tweet_path(tweet.id), method: :get do %>
           <div class='tweet-img-content'>
             <%= image_tag tweet.image, class: "tweet-img" %>
           </div>
